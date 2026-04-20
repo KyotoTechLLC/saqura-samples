@@ -41,7 +41,7 @@ do {
     print("Plaintext : \(plaintext)")
     print("Encrypted : \(truncate(encrypted, 80))")
     print("Decrypted : \(decrypted)")
-    print("Match     : \(decrypted == plaintext)\n")
+    print("Match     : \(matchLabel(decrypted == plaintext))\n")
 } catch {
     print("AES error: \(error)\n")
 }
@@ -58,7 +58,7 @@ do {
     print("Plaintext   : \(plaintext)")
     print("Encrypted   : \(truncate(encrypted, 80))")
     print("Decrypted   : \(decrypted)")
-    print("Match       : \(decrypted == plaintext)\n")
+    print("Match       : \(matchLabel(decrypted == plaintext))\n")
 } catch {
     print("RSA error: \(error)\n")
 }
@@ -89,4 +89,11 @@ print("Password hashing     : \(ApiLicense.isPasswordHashingAvailable)")
 
 func truncate(_ s: String, _ max: Int) -> String {
     s.count <= max ? s : String(s.prefix(max)) + "…"
+}
+
+// On the Free tier, SaQura wraps the decrypted output in [UNLICENSED-…] tags,
+// so the literal equality check fails even though the round-trip itself worked.
+// Activating a license strips the wrapper and the match becomes true.
+func matchLabel(_ matched: Bool) -> String {
+    matched ? "true" : "false  (expected on Free tier — activate a license to strip the watermark)"
 }

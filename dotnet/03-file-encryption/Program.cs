@@ -72,6 +72,14 @@ static async Task DecryptAsync(string inputPath, string outputPath, string keyPa
 
     await File.WriteAllTextAsync(outputPath, plaintext);
     Console.WriteLine($"Decrypted {inputPath} → {outputPath}");
+
+    if (!ApiLicense.IsLicensed)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Note: the Free tier wraps the decrypted output in [UNLICENSED-AES]…");
+        Console.WriteLine("tags, so the recovered file will not be byte-identical to the input.");
+        Console.WriteLine("Activate a license (see dotnet/02-license-activation) to get a clean round-trip.");
+    }
 }
 
 static void PrintUsage()

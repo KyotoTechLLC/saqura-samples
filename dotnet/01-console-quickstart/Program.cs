@@ -41,7 +41,7 @@ else
     Console.WriteLine($"Plaintext : {plaintext}");
     Console.WriteLine($"Encrypted : {Truncate(encrypted, 80)}");
     Console.WriteLine($"Decrypted : {decrypted}");
-    Console.WriteLine($"Match     : {decrypted == plaintext}\n");
+    Console.WriteLine($"Match     : {MatchLabel(decrypted == plaintext)}\n");
 }
 
 // 3. RSA — asymmetric encryption (Free tier: max 50 chars per call).
@@ -56,7 +56,7 @@ else
     Console.WriteLine($"Plaintext   : {plaintext}");
     Console.WriteLine($"Encrypted   : {Truncate(encrypted, 80)}");
     Console.WriteLine($"Decrypted   : {decrypted}");
-    Console.WriteLine($"Match       : {decrypted == plaintext}\n");
+    Console.WriteLine($"Match       : {MatchLabel(decrypted == plaintext)}\n");
 }
 
 // 4. Password hashing — always available.
@@ -85,3 +85,9 @@ return 0;
 
 static string Truncate(string s, int max) =>
     s.Length <= max ? s : s[..max] + "…";
+
+// On the Free tier, SaQura wraps the decrypted output in [UNLICENSED-…] tags,
+// so the literal equality check fails even though the round-trip itself worked.
+// Activating a license strips the wrapper and the match becomes True.
+static string MatchLabel(bool matched) =>
+    matched ? "True" : "False  (expected on Free tier — activate a license to strip the watermark)";
