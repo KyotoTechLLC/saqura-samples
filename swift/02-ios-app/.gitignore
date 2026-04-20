@@ -1,0 +1,17 @@
+# License files — never commit your own
+*.lic
+SaQuraSampleApp/Resources/Licenses/*.lic
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+.build/
+
+# SwiftPM
+.swiftpm/
+Package.resolved
+
+# macOS
+.DS_Store

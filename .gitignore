@@ -1,0 +1,33 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.idea/
+*.swp
+*.swo
+
+# Local config overrides (never commit real keys)
+appsettings.Development.json
+appsettings.Local.json
+.env
+.env.local
+
+# SaQura license files — never commit your own .lic
+*.lic
+Licenses/
+
+# Swift / Xcode
+.build/
+.swiftpm/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+Package.resolved
+
+# macOS
+.DS_Store
+
+# NuGet local fallback
+local-packages/
