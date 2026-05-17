@@ -49,13 +49,13 @@ If you've purchased SaQura, you received a `.lic` file. Activate it once at star
 ### .NET
 
 ```csharp
-await ApiLicense.ActivateLicenseFileAsync("SaQura_Pro_standard.lic");
+await ApiLicense.ActivateLicenseFileAsync("SaQura_Sample_standard.lic");
 ```
 
 ### Swift
 
 ```swift
-await ApiLicense.activateLicenseFile("SaQura_Pro_distribution.lic")
+await ApiLicense.activateLicenseFile("SaQura_Sample_distribution.lic")
 ```
 
 For mobile apps distributed via the App Store, embed the license JSON in your bundle instead of shipping the `.lic` file — see [`dotnet/02-license-activation`](../dotnet/02-license-activation) for both approaches.

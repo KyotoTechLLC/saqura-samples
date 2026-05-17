@@ -20,7 +20,7 @@ The SaQuraSwift package is resolved from GitHub — no other setup.
 Set `SAQURA_LICENSE_PATH` to a `.lic` file you've purchased:
 
 ```bash
-export SAQURA_LICENSE_PATH=/path/to/SaQura_Pro_standard.lic
+export SAQURA_LICENSE_PATH=/path/to/SaQura_Sample_standard.lic
 swift run
 ```
 

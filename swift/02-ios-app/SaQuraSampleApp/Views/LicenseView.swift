@@ -217,7 +217,7 @@ struct LicenseView: View {
                 // Load bundled license (Standard)
                 Button(action: {
                     Task {
-                        await licenseManager.activateFromBundledLicense(named: "SaQura_Pro_standard")
+                        await licenseManager.activateFromBundledLicense(named: "SaQura_Sample_standard")
                     }
                 }) {
                     HStack {
@@ -236,7 +236,7 @@ struct LicenseView: View {
                 // Load bundled license (Distribution)
                 Button(action: {
                     Task {
-                        await licenseManager.activateFromBundledLicense(named: "SaQura_Pro_distribution")
+                        await licenseManager.activateFromBundledLicense(named: "SaQura_Sample_distribution")
                     }
                 }) {
                     HStack {

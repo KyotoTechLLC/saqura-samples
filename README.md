@@ -52,7 +52,7 @@ If you've purchased a SaQura license, you receive a `.lic` file (or two — one 
 using SaQura;
 
 // From a file on disk
-await ApiLicense.ActivateLicenseFileAsync("/path/to/SaQura_Pro_standard.lic");
+await ApiLicense.ActivateLicenseFileAsync("/path/to/SaQura_Sample_standard.lic");
 
 // Or embed the JSON content directly (recommended for mobile / packaged apps)
 await ApiLicense.ActivateLicenseFromJsonAsync(licenseJson);
@@ -69,7 +69,7 @@ if (ApiLicense.IsLicensed)
 import SaQura
 
 // From a file path
-let result = await ApiLicense.activateLicenseFile("/path/to/SaQura_Pro_distribution.lic")
+let result = await ApiLicense.activateLicenseFile("/path/to/SaQura_Sample_distribution.lic")
 
 // Or embed JSON content directly (recommended for App Store)
 let result = await ApiLicense.activateLicenseFromJson(licenseJson)
