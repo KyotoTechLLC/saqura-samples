@@ -20,7 +20,7 @@ No environment variables needed. Output runs on the Free tier with watermarks.
 Set `SAQURA_LICENSE_PATH` to a `.lic` file you've purchased:
 
 ```bash
-export SAQURA_LICENSE_PATH=/path/to/SaQura_Pro_standard.lic
+export SAQURA_LICENSE_PATH=/path/to/SaQura_Sample_standard.lic
 dotnet run
 ```
 
@@ -33,7 +33,7 @@ SaQura — Console quickstart
 ===========================
 
 Running on the Free tier (no license). Output will be watermarked.
-Set SAQURA_LICENSE_PATH=/path/to/SaQura_Pro_standard.lic to unlock full features.
+Set SAQURA_LICENSE_PATH=/path/to/SaQura_Sample_standard.lic to unlock full features.
 
 --- AES-256-GCM ---
 Plaintext : Hello from SaQura!

@@ -41,7 +41,7 @@ static async Task ActivateFromFileAsync()
     {
         Console.WriteLine("Set SAQURA_LICENSE_PATH to the .lic file you received.");
         Console.WriteLine("Example:");
-        Console.WriteLine("  export SAQURA_LICENSE_PATH=/path/to/SaQura_Pro_standard.lic");
+        Console.WriteLine("  export SAQURA_LICENSE_PATH=/path/to/SaQura_Sample_standard.lic");
         Console.WriteLine("  dotnet run -- file\n");
         Console.WriteLine("Continuing on the Free tier for demonstration.\n");
         return;
@@ -71,7 +71,7 @@ static async Task ActivateFromJsonAsync()
     {
         Console.WriteLine("Set SAQURA_LICENSE_JSON to the contents of your .lic file.");
         Console.WriteLine("Example:");
-        Console.WriteLine("  export SAQURA_LICENSE_JSON=\"$(cat SaQura_Pro_standard.lic)\"");
+        Console.WriteLine("  export SAQURA_LICENSE_JSON=\"$(cat SaQura_Sample_standard.lic)\"");
         Console.WriteLine("  dotnet run -- json\n");
         Console.WriteLine("Continuing on the Free tier for demonstration.\n");
         return;

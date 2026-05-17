@@ -6,11 +6,11 @@ Shows the two ways to activate a SaQura license: from a `.lic` file on disk, or 
 
 ```bash
 # From a .lic file
-export SAQURA_LICENSE_PATH=/path/to/SaQura_Pro_standard.lic
+export SAQURA_LICENSE_PATH=/path/to/SaQura_Sample_standard.lic
 dotnet run -- file
 
 # From embedded JSON content
-export SAQURA_LICENSE_JSON="$(cat SaQura_Pro_standard.lic)"
+export SAQURA_LICENSE_JSON="$(cat SaQura_Sample_standard.lic)"
 dotnet run -- json
 ```
 

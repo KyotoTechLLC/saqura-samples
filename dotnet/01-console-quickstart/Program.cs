@@ -27,7 +27,7 @@ if (!string.IsNullOrWhiteSpace(licensePath) && File.Exists(licensePath))
 else
 {
     Console.WriteLine("Running on the Free tier (no license). Output will be watermarked.");
-    Console.WriteLine("Set SAQURA_LICENSE_PATH=/path/to/SaQura_Pro_standard.lic to unlock full features.\n");
+    Console.WriteLine("Set SAQURA_LICENSE_PATH=/path/to/SaQura_Sample_standard.lic to unlock full features.\n");
 }
 
 // 2. AES — symmetric encryption (Free tier: max 100 chars per call).

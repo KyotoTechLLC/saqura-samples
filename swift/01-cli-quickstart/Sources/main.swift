@@ -27,7 +27,7 @@ if let path = ProcessInfo.processInfo.environment["SAQURA_LICENSE_PATH"],
     }
 } else {
     print("Running on the Free tier (no license). Output will be watermarked.")
-    print("Set SAQURA_LICENSE_PATH=/path/to/SaQura_Pro_distribution.lic to unlock full features.\n")
+    print("Set SAQURA_LICENSE_PATH=/path/to/SaQura_Sample_distribution.lic to unlock full features.\n")
 }
 
 // 2. AES — symmetric encryption (Free tier: max 100 chars per call).

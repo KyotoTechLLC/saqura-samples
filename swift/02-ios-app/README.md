@@ -23,7 +23,7 @@ swift run
 
 Three ways, in order of convenience:
 
-1. **Bundled file** — drop `SaQura_Pro_standard.lic` into `SaQuraSampleApp/Resources/Licenses/` and tap **Activate Bundled Standard License**. The folder is `.gitignore`d.
+1. **Bundled file** — drop `SaQura_Sample_standard.lic` into `SaQuraSampleApp/Resources/Licenses/` and tap **Activate Bundled Standard License**. The folder is `.gitignore`d.
 2. **File picker** — tap **Load License File (.lic)** and pick the file from disk.
 3. **JSON paste** — tap **Enter License JSON** and paste the contents of your `.lic` file. Useful for testing the embedded-license path before you ship.
 
