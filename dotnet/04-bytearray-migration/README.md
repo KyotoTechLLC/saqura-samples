@@ -1,10 +1,10 @@
 # dotnet/04-bytearray-migration
 
-Migrates `byte[]` AES ciphertext produced by SaQura **1.0.0.2 – 1.0.7** to the **v1.0.8+** cross-platform wire format.
+Migrates `byte[]` AES ciphertext produced by SaQura **1.0.0.2 – 1.0.4.4** to the **v1.0.8+** cross-platform wire format.
 
 ## Who needs this?
 
-Read [§3 of MIGRATION_GUIDE_1.0.7_TO_1.0.8.md](https://kyototech.co.jp/docs/saqura/#aes-bytearray-migration) for the decision tree. Short version: you need this sample only if all three apply:
+Read [§3 of MIGRATION_GUIDE_1.0.4.4_TO_1.0.8.md](https://kyototech.co.jp/docs/saqura/#aes-bytearray-migration) for the decision tree. Short version: you need this sample only if all three apply:
 
 1. Your code called `byte[].EncryptWithAESAsync(string)` at some point.
 2. You stored the output (on disk, in a database, message queue, anywhere).
@@ -55,7 +55,7 @@ No SAQURA_LICENSE_PATH set — running on Free tier (watermarks visible on Relea
 byte[] AES Migration — SaQura 1.0.4.4 stored data → 1.0.8
 ═══════════════════════════════════════════════════════════════
 Encryption key:      /HyMIxKFFE4ht3REm2YagNrLcG+TknXdw+RGEDVVE/8=  (Base64, 32 bytes)
-Legacy ciphertext:   72 bytes (v1.0.7 wire format with inner base64 wrap)
+Legacy ciphertext:   72 bytes (legacy wire format with inner base64 wrap)
 Expected plaintext:  "SaQura test corpus 2026 fixture." (32 bytes)
 
 STEP 1 — Regular DecryptWithAESAsync on legacy ciphertext

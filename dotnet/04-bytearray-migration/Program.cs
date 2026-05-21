@@ -1,6 +1,6 @@
 // dotnet/04-bytearray-migration
 //
-// Migrates `byte[]` AES ciphertext produced by SaQura 1.0.0.2..1.0.7
+// Migrates `byte[]` AES ciphertext produced by SaQura 1.0.0.2..1.0.4.4
 // to the v1.0.8+ wire format. Self-contained: the embedded legacy
 // ciphertext below is a real fixture from the public test corpus
 // (net_1.0.4.4/symmetric/aes_gcm_short.json), produced by the
@@ -57,7 +57,7 @@ Console.WriteLine(Sep);
 Console.WriteLine("byte[] AES Migration — SaQura 1.0.4.4 stored data → 1.0.8");
 Console.WriteLine(Sep);
 Console.WriteLine($"Encryption key:      {key}  (Base64, 32 bytes)");
-Console.WriteLine($"Legacy ciphertext:   {legacyCiphertext.Length} bytes (v1.0.7 wire format with inner base64 wrap)");
+Console.WriteLine($"Legacy ciphertext:   {legacyCiphertext.Length} bytes (legacy wire format with inner base64 wrap)");
 Console.WriteLine($"Expected plaintext:  \"{expectedPlaintext}\" ({Encoding.UTF8.GetByteCount(expectedPlaintext)} bytes)");
 Console.WriteLine();
 
@@ -145,7 +145,7 @@ Console.WriteLine("    byte[] newCt = await raw.EncryptWithAESAsync(key);");
 Console.WriteLine("    SaveCiphertext(newCt);");
 Console.WriteLine("    DeleteOldCiphertext();");
 Console.WriteLine();
-Console.WriteLine("See MIGRATION_GUIDE_1.0.7_TO_1.0.8.md in your nupkg + the");
+Console.WriteLine("See MIGRATION_GUIDE_1.0.4.4_TO_1.0.8.md in your nupkg + the");
 Console.WriteLine("kyototech.co.jp/docs/saqura/#aes-bytearray-migration section");
 Console.WriteLine("for batch-migration patterns and edge cases.");
 
