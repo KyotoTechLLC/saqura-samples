@@ -81,7 +81,7 @@ STEP 5 — Migration helper rejects v1.0.8 ciphertext (defensive)
 ## What to look at
 
 - `Program.cs` — every call you need for a production migration, with all the verification steps surfaced as separate sections.
-- `ByteArrayMigration.csproj` — only `<PackageReference Include="SaQura" Version="1.0.8" />`.
+- `ByteArrayMigration.csproj` — only `<PackageReference Include="SaQura" Version="1.0.10" />`.
 
 ## Need help?
 

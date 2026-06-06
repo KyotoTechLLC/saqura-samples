@@ -4,11 +4,17 @@ A 5-minute walkthrough to run your first SaQura encryption call.
 
 ## 1. Prerequisites
 
-Pick one platform — the samples support both.
+Pick one platform — the samples support all three.
 
 ### .NET
 
 - .NET 8.0 SDK or newer — [download](https://dotnet.microsoft.com/download/dotnet/8.0)
+
+### Kotlin / Android
+
+- JDK 17
+- Android SDK (compileSdk 34, build-tools 34.0.0) and a device or emulator on API 24+
+- No Gradle install needed — the sample ships a Gradle wrapper (`./gradlew`)
 
 ### Swift
 
@@ -33,6 +39,17 @@ dotnet run
 
 You should see AES, RSA, and password-hash demos run end-to-end. The output is watermarked with `[UNLICENSED-…]` tags because you're on the Free tier — that's expected.
 
+### Kotlin / Android
+
+```bash
+cd kotlin/01-android-quickstart
+./gradlew :app:installDebug
+adb shell am start -n jp.co.kyototech.saqura.sample/.MainActivity
+adb logcat -s SaQuraSample:I
+```
+
+The app runs the same AES / RSA / password demos (plus a streaming demo) on your device and prints them to the screen and to logcat — same Free-tier watermarks.
+
 ### Swift
 
 ```bash
@@ -52,6 +69,15 @@ If you've purchased SaQura, you received a `.lic` file. Activate it once at star
 await ApiLicense.ActivateLicenseFileAsync("SaQura_Sample_standard.lic");
 ```
 
+### Kotlin / Android
+
+```kotlin
+// Bundle the distribution .lic in app/src/main/assets/ and activate at startup:
+val json = assets.open("SaQura_Sample_distribution.lic")
+    .bufferedReader().use { it.readText() }
+ApiLicense.activateLicenseFromJson(json)
+```
+
 ### Swift
 
 ```swift
@@ -66,6 +92,18 @@ For mobile apps distributed via the App Store, embed the license JSON in your bu
 
 ```bash
 dotnet add package SaQura
+```
+
+### Kotlin / Android
+
+In your module's `build.gradle.kts`:
+
+```kotlin
+repositories { mavenCentral() }
+
+dependencies {
+    implementation("jp.co.kyototech:saqura:1.1.3")
+}
 ```
 
 ### Swift
@@ -92,6 +130,6 @@ Or in Xcode: **File → Add Package Dependencies…** and paste `https://github.
 
 **`[UNLICENSED-…]` tags in output** — Expected on the Free tier. The watermark is applied to the ciphertext, not the plaintext, so decrypting still works. Activate a license to remove it.
 
-**Compiled output doesn't decrypt on the other platform** — The Swift and .NET packages share a common format, but both sides must be licensed the same way. An unlicensed Swift client can't decrypt licensed .NET ciphertext and vice versa.
+**Compiled output doesn't decrypt on the other platform** — The .NET, Kotlin, and Swift packages share a common wire format, but both sides must be licensed the same way. An unlicensed client can't decrypt licensed ciphertext and vice versa.
 
 **Still stuck?** Email support@kyototech.jp.
