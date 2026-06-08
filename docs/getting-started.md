@@ -132,15 +132,17 @@ dependencies {
 
 ### Swift
 
-Add to your `Package.swift`:
+SaQura for Swift is distributed as a **binary xcframework** via `saqura.de` (no source). Add to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/KyotoTechLLC/SaQuraSwift.git", from: "1.0.0")
+    .package(url: "https://saqura.de/swift/saqura-swift.git", from: "1.0.9")
 ]
 ```
 
-Or in Xcode: **File → Add Package Dependencies…** and paste `https://github.com/KyotoTechLLC/SaQuraSwift.git`.
+…and reference the product as `.product(name: "SaQura", package: "saqura-swift")`.
+
+Or in Xcode: **File → Add Package Dependencies…** and paste `https://saqura.de/swift/saqura-swift.git`.
 
 ### JavaScript / TypeScript
 

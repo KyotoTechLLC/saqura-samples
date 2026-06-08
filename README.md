@@ -240,7 +240,7 @@ See [docs/getting-started.md](docs/getting-started.md) for a longer walkthrough.
 
 - **NuGet (.NET)**: [nuget.org/packages/SaQura](https://www.nuget.org/packages/SaQura)
 - **Maven Central (Kotlin/Android)**: [`jp.co.kyototech:saqura`](https://central.sonatype.com/artifact/jp.co.kyototech/saqura)
-- **Swift Package**: distributed as a binary xcframework — see [kyototech.co.jp/products/saqura](https://kyototech.co.jp/products/saqura)
+- **Swift Package**: binary xcframework via SwiftPM — `https://saqura.de/swift/saqura-swift.git`
 - **npm (JavaScript/TypeScript)**: [`saqura`](https://www.npmjs.com/package/saqura)
 - **Product page**: [kyototech.co.jp/products/saqura](https://kyototech.co.jp/products/saqura)
 - **Pricing**: [kyototech.co.jp/pricing](https://kyototech.co.jp/pricing)

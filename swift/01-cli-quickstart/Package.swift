@@ -7,18 +7,18 @@ let package = Package(
         .macOS(.v12)
     ],
     dependencies: [
-        // After SaQuraSwift is published on GitHub, this resolves automatically.
-        // For local development, swap for: .package(path: "../../../SaQuraSwift")
+        // SaQura for Swift is distributed as a binary xcframework via saqura.de
+        // (no source). SwiftPM resolves it automatically; nothing else to set up.
         .package(
-            url: "https://github.com/KyotoTechLLC/SaQuraSwift.git",
-            from: "1.0.0"
+            url: "https://saqura.de/swift/saqura-swift.git",
+            from: "1.0.9"
         )
     ],
     targets: [
         .executableTarget(
             name: "CliQuickstart",
             dependencies: [
-                .product(name: "SaQura", package: "SaQuraSwift")
+                .product(name: "SaQura", package: "saqura-swift")
             ],
             path: "Sources"
         )

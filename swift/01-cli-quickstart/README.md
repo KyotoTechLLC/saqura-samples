@@ -8,12 +8,12 @@ The Swift version of [`dotnet/01-console-quickstart`](../../dotnet/01-console-qu
 swift run
 ```
 
-The SaQuraSwift package is resolved from GitHub — no other setup.
+The SaQura package (binary xcframework) is resolved from `saqura.de` — no other setup.
 
 ## What to look at
 
 - `Sources/main.swift` — every call needed for a basic integration, heavily commented.
-- `Package.swift` — the SaQuraSwift dependency declaration.
+- `Package.swift` — the SaQura dependency declaration (binary xcframework via saqura.de).
 
 ## Unlock the paid tier
 

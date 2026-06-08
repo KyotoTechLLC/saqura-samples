@@ -53,4 +53,4 @@ swift/02-ios-app/
 - iOS 17.0+ or macOS 14.0+ (sample uses `NavigationSplitView` and the two-closure `onChange`)
 - Xcode 15.0+ / Swift 5.9+
 
-> The SaQuraSwift SDK itself supports iOS 15+ / macOS 12+ — only this sample app requires the newer SwiftUI APIs.
+> The SaQura SDK itself supports iOS 15+ / macOS 12+ — only this sample app requires the newer SwiftUI APIs.

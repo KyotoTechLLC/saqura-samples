@@ -5,7 +5,7 @@ let package = Package(
     name: "SaQuraSampleApp",
     // The sample uses a few SwiftUI APIs (NavigationSplitView NavigationLink(value:),
     // onChange two-closure form) that require iOS 17 / macOS 14 or newer. The
-    // SaQuraSwift SDK itself supports iOS 15 / macOS 12.
+    // SaQura SDK itself supports iOS 15 / macOS 12.
     platforms: [
         .iOS(.v17),
         .macOS(.v14)
@@ -17,18 +17,18 @@ let package = Package(
         )
     ],
     dependencies: [
-        // After SaQuraSwift is published on GitHub, this resolves automatically.
-        // For local development, swap for: .package(path: "../../../SaQuraSwift")
+        // SaQura for Swift is distributed as a binary xcframework via saqura.de
+        // (no source). SwiftPM resolves it automatically; nothing else to set up.
         .package(
-            url: "https://github.com/KyotoTechLLC/SaQuraSwift.git",
-            from: "1.0.0"
+            url: "https://saqura.de/swift/saqura-swift.git",
+            from: "1.0.9"
         )
     ],
     targets: [
         .executableTarget(
             name: "SaQuraSampleApp",
             dependencies: [
-                .product(name: "SaQura", package: "SaQuraSwift")
+                .product(name: "SaQura", package: "saqura-swift")
             ],
             path: "SaQuraSampleApp",
             resources: [
