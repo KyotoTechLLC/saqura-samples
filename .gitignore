@@ -26,6 +26,13 @@ DerivedData/
 xcuserdata/
 Package.resolved
 
+# Node / JavaScript
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+npm-debug.log*
+
 # macOS
 .DS_Store
 

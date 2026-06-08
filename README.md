@@ -1,6 +1,6 @@
 # SaQura — Official Samples
 
-**Cryptography that works the same on .NET, Kotlin/Android, and Swift.**
+**Cryptography that works the same on .NET, Kotlin/Android, Swift, and JavaScript/TypeScript.**
 
 [SaQura](https://kyototech.co.jp/products/saqura) is a commercial cryptography library by KyotoTech LLC. It covers AES-256-GCM, RSA-4096, password hashing, digital signatures, post-quantum encryption (FrodoKEM + Classic McEliece, plus the NIST FIPS standards — hybrid X25519/ML-KEM (FIPS 203), ML-DSA (FIPS 204), SLH-DSA (FIPS 205)), and constant-memory large-file streaming (SQS1) — and data encrypted on any one of .NET, Kotlin, or Swift decrypts identically on the others.
 
@@ -19,8 +19,11 @@ This repository contains runnable sample projects that show you how to add SaQur
 | 05 | [`kotlin/01-android-quickstart`](kotlin/01-android-quickstart) | Android (API 24+) | The 60-second Android integration — AES, RSA, passwords, streaming on a real device |
 | 06 | [`swift/01-cli-quickstart`](swift/01-cli-quickstart) | Swift CLI (macOS) | The 30-second Swift integration |
 | 07 | [`swift/02-ios-app`](swift/02-ios-app) | SwiftUI iOS / macOS | Interactive playground for every feature |
+| 08 | [`js/01-node-quickstart`](js/01-node-quickstart) | Node.js 18+ | The 30-second JS/TS integration — Gen8 PQC encryption, ML-DSA signatures, SQS1 streaming |
 
 Each sample is self-contained and has its own README.
+
+> **JavaScript/TypeScript (v0.1)** is post-quantum first: it ships Gen8 hybrid encryption, ML-DSA/SLH-DSA signatures and SQS1 streaming. Direct AES, RSA and password-hashing APIs (already in the .NET/Kotlin/Swift packages) arrive in the JS package in v1.0.
 
 ---
 
@@ -43,6 +46,10 @@ swift run
 cd kotlin/01-android-quickstart
 ./gradlew :app:installDebug
 adb shell am start -n jp.co.kyototech.saqura.sample/.MainActivity
+
+# JavaScript / Node.js
+cd js/01-node-quickstart
+npm install && npm start
 ```
 
 That's it. No setup.
@@ -156,6 +163,28 @@ val ok   = PasswordHasher.verify("MyPassword123", hash)
 
 (All SaQura calls are `suspend` — invoke them from a coroutine.)
 
+## 30-second example (JavaScript / TypeScript)
+
+```javascript
+import {
+  gen8GenerateKeyPair, gen8Encrypt, gen8Decrypt, QuantumStrength,
+  streamEncrypt, streamDecrypt,
+} from "saqura";
+
+// Gen8 — hybrid post-quantum encryption (X25519 + ML-KEM)
+const { publicKey, privateKey } = await gen8GenerateKeyPair(QuantumStrength.Highest);
+const { encapsulatedSecret, encryptedMessage } = await gen8Encrypt("Hello, SaQura!", publicKey);
+const plaintext = await gen8Decrypt(encapsulatedSecret, privateKey, encryptedMessage);
+// plaintext === "Hello, SaQura!"
+
+// SQS1 streaming — AES-256-GCM, byte-identical to the other SDKs
+const key  = crypto.getRandomValues(new Uint8Array(32));
+const blob = await streamEncrypt(new TextEncoder().encode("large data…"), key);
+const out  = await streamDecrypt(blob, key);
+```
+
+(All SaQura JS calls are `async` — `await` them. v0.1 covers Gen8, signatures and SQS1 streaming.)
+
 ---
 
 ## Free tier limits
@@ -190,7 +219,7 @@ let decrypted = try await encrypted.decryptWithAES(key: sharedKey)
 // "Hello from server"
 ```
 
-The .NET, Kotlin, and Swift packages use the same byte-level format for AES, RSA, passwords, quantum-safe output, and SQS1 streaming. No conversion layer needed — a stream encrypted by an Android client decrypts on a .NET server and vice versa.
+The .NET, Kotlin, and Swift packages use the same byte-level format for AES, RSA, passwords, quantum-safe output, and SQS1 streaming. No conversion layer needed — a stream encrypted by an Android client decrypts on a .NET server and vice versa. The JavaScript/TypeScript package (v0.1) is byte-compatible for its supported features — Gen8 post-quantum encryption, ML-DSA/SLH-DSA signatures and SQS1 streaming — so a SQS1 stream or Gen8 message produced in Node decrypts identically on .NET, Kotlin and Swift.
 
 ---
 
@@ -201,6 +230,7 @@ The .NET, Kotlin, and Swift packages use the same byte-level format for AES, RSA
 - **I want to encrypt files, not strings** → [`dotnet/03-file-encryption`](dotnet/03-file-encryption)
 - **I'm building an Android app** → [`kotlin/01-android-quickstart`](kotlin/01-android-quickstart)
 - **I'm building an iOS app** → [`swift/02-ios-app`](swift/02-ios-app)
+- **I'm building a Node.js / TypeScript app** → [`js/01-node-quickstart`](js/01-node-quickstart)
 
 See [docs/getting-started.md](docs/getting-started.md) for a longer walkthrough.
 
@@ -211,9 +241,10 @@ See [docs/getting-started.md](docs/getting-started.md) for a longer walkthrough.
 - **NuGet (.NET)**: [nuget.org/packages/SaQura](https://www.nuget.org/packages/SaQura)
 - **Maven Central (Kotlin/Android)**: [`jp.co.kyototech:saqura`](https://central.sonatype.com/artifact/jp.co.kyototech/saqura)
 - **Swift Package**: distributed as a binary xcframework — see [kyototech.co.jp/products/saqura](https://kyototech.co.jp/products/saqura)
+- **npm (JavaScript/TypeScript)**: [`saqura`](https://www.npmjs.com/package/saqura)
 - **Product page**: [kyototech.co.jp/products/saqura](https://kyototech.co.jp/products/saqura)
 - **Pricing**: [kyototech.co.jp/pricing](https://kyototech.co.jp/pricing)
-- **Support**: support@kyototech.jp
+- **Support**: support@kyototech.co.jp
 
 ## License
 

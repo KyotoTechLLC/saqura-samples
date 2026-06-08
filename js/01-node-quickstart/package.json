@@ -1,0 +1,13 @@
+{
+  "name": "saqura-node-quickstart",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SaQura JS/TS SDK — Node.js quickstart (Gen8 post-quantum encryption, PQC signatures, SQS1 streaming).",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "saqura": "^0.1.0"
+  }
+}

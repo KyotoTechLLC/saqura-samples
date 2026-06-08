@@ -4,7 +4,7 @@ A 5-minute walkthrough to run your first SaQura encryption call.
 
 ## 1. Prerequisites
 
-Pick one platform — the samples support all three.
+Pick one platform — the samples support all four.
 
 ### .NET
 
@@ -20,6 +20,11 @@ Pick one platform — the samples support all three.
 
 - macOS 12.0 or newer (Monterey)
 - Xcode 15.0 or newer, **or** Swift 5.9 command-line toolchain
+
+### JavaScript / TypeScript
+
+- Node.js 18 or newer — [download](https://nodejs.org/)
+- The liboqs WebAssembly engine is bundled in the package; nothing to compile
 
 ## 2. Clone this repository
 
@@ -59,6 +64,15 @@ swift run
 
 Same output shape, same Free-tier watermarks.
 
+### JavaScript / Node.js
+
+```bash
+cd js/01-node-quickstart
+npm install && npm start
+```
+
+Runs a Gen8 post-quantum encryption, an ML-DSA signature and an SQS1 stream end-to-end on the Free tier. (The JS v0.1 package is post-quantum first — no direct AES/RSA string APIs yet, so no `[UNLICENSED-…]` watermark on this output.)
+
 ## 4. (Optional) Activate a license
 
 If you've purchased SaQura, you received a `.lic` file. Activate it once at startup and the watermarks go away.
@@ -82,6 +96,16 @@ ApiLicense.activateLicenseFromJson(json)
 
 ```swift
 await ApiLicense.activateLicenseFile("SaQura_Sample_distribution.lic")
+```
+
+### JavaScript / TypeScript
+
+```javascript
+import { readFile } from "node:fs/promises";
+import { ApiLicense } from "saqura";
+
+const json = await readFile("SaQura_Sample_pro.lic", "utf8");
+await ApiLicense.activate(json);
 ```
 
 For mobile apps distributed via the App Store, embed the license JSON in your bundle instead of shipping the `.lic` file — see [`dotnet/02-license-activation`](../dotnet/02-license-activation) for both approaches.
@@ -118,6 +142,14 @@ dependencies: [
 
 Or in Xcode: **File → Add Package Dependencies…** and paste `https://github.com/KyotoTechLLC/SaQuraSwift.git`.
 
+### JavaScript / TypeScript
+
+```bash
+npm install saqura
+```
+
+Works in Node.js (ESM `import` or CommonJS `require`); the bundled WebAssembly engine is loaded automatically.
+
 ## 6. What's next?
 
 - Browse the [sample index](../README.md#samples) for more focused walkthroughs.
@@ -132,4 +164,4 @@ Or in Xcode: **File → Add Package Dependencies…** and paste `https://github.
 
 **Compiled output doesn't decrypt on the other platform** — The .NET, Kotlin, and Swift packages share a common wire format, but both sides must be licensed the same way. An unlicensed client can't decrypt licensed ciphertext and vice versa.
 
-**Still stuck?** Email support@kyototech.jp.
+**Still stuck?** Email support@kyototech.co.jp.
