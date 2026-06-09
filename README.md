@@ -2,7 +2,7 @@
 
 **Cryptography that works the same on .NET, Kotlin/Android, Swift, and JavaScript/TypeScript.**
 
-[SaQura](https://kyototech.co.jp/products/saqura) is a commercial cryptography library by KyotoTech LLC. It covers AES-256-GCM, RSA-4096, password hashing, digital signatures, post-quantum encryption (FrodoKEM + Classic McEliece, plus the NIST FIPS standards — hybrid X25519/ML-KEM (FIPS 203), ML-DSA (FIPS 204), SLH-DSA (FIPS 205)), and constant-memory large-file streaming (SQS1) — and data encrypted on any one of .NET, Kotlin, or Swift decrypts identically on the others.
+[SaQura](https://kyototech.co.jp/docs/saqura) is a commercial cryptography library by KyotoTech LLC. It covers AES-256-GCM, RSA-4096, password hashing, digital signatures, post-quantum encryption (FrodoKEM + Classic McEliece, plus the NIST FIPS standards — hybrid X25519/ML-KEM (FIPS 203), ML-DSA (FIPS 204), SLH-DSA (FIPS 205)), and constant-memory large-file streaming (SQS1) — and data encrypted on any one of .NET, Kotlin, or Swift decrypts identically on the others.
 
 This repository contains runnable sample projects that show you how to add SaQura to your app in **under 5 minutes**.
 
@@ -242,10 +242,10 @@ See [docs/getting-started.md](docs/getting-started.md) for a longer walkthrough.
 - **Maven Central (Kotlin/Android)**: [`jp.co.kyototech:saqura`](https://central.sonatype.com/artifact/jp.co.kyototech/saqura)
 - **Swift Package**: binary xcframework via SwiftPM — `https://saqura.de/swift/saqura-swift.git`
 - **npm (JavaScript/TypeScript)**: [`saqura`](https://www.npmjs.com/package/saqura)
-- **Product page**: [kyototech.co.jp/products/saqura](https://kyototech.co.jp/products/saqura)
+- **Docs**: [kyototech.co.jp/docs/saqura](https://kyototech.co.jp/docs/saqura)
 - **Pricing**: [kyototech.co.jp/pricing](https://kyototech.co.jp/pricing)
 - **Support**: support@kyototech.co.jp
 
 ## License
 
-Sample code in this repository is MIT-licensed — see [LICENSE](LICENSE). The SaQura library itself is proprietary; see the SaQura [terms](https://kyototech.co.jp/products/saqura/terms).
+Sample code in this repository is MIT-licensed — see [LICENSE](LICENSE). The SaQura library itself is proprietary; see the SaQura [license terms](https://kyototech.co.jp/docs/saqura).
