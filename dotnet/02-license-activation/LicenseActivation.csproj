@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SaQura" Version="1.0.10" />
+    <PackageReference Include="SaQura" Version="1.0.11" />
   </ItemGroup>
 
 </Project>
