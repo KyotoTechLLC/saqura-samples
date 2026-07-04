@@ -11,7 +11,7 @@ let package = Package(
         // (no source). SwiftPM resolves it automatically; nothing else to set up.
         .package(
             url: "https://saqura.de/swift/saqura-swift.git",
-            from: "1.0.9"
+            from: "1.1.1"
         )
     ],
     targets: [

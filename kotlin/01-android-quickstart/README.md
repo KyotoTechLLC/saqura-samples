@@ -10,7 +10,7 @@ you add is one line:
 ```kotlin
 // app/build.gradle.kts
 dependencies {
-    implementation("jp.co.kyototech:saqura:1.1.3")
+    implementation("jp.co.kyototech:saqura:1.2.0")
 }
 ```
 
@@ -48,7 +48,7 @@ variable or a `local.properties` file with `sdk.dir=/path/to/Android/sdk`
 
 ```
 SaQura — Android quickstart
-SDK: jp.co.kyototech:saqura:1.1.3
+SDK: jp.co.kyototech:saqura:1.2.0
 
 --- License ---
 Licensed : false
@@ -95,13 +95,29 @@ and decrypted output is byte-identical to the input. With a Pro+ license the
 post-quantum surfaces (Gen8 hybrid ML-KEM, ML-DSA / SLH-DSA signatures, and the
 streaming PQ envelope) become available too.
 
+## App binding (optional)
+
+A distribution license can be **bound to your app**, so an extracted `.lic` cannot be
+activated inside a different app. It is verified offline at activation and binds to
+your **package name** (`applicationId`) and **app-signing certificate** (SHA-256).
+
+Because this sample already calls `ApiLicense.initialize(context)` at startup, **no
+extra code is needed** — the library reads the package name and certificate from
+Android itself. (If a license is bound but `initialize(context)` was never called,
+activation is rejected fail-closed.)
+
+> ⚠️ With **Google Play App Signing**, the certificate that matters is Google's
+> app-signing key (Play Console → App integrity), not your upload key — send us that
+> SHA-256 fingerprint for the bound license. On a mismatch, activation fails with a
+> clear message and the app stays on the Free tier; it never crashes.
+
 ## What to look at
 
 - `app/src/main/java/jp/co/kyototech/saqura/sample/SampleApplication.kt` —
   wiring `ApiLicense.initialize(context)` + `loadStoredLicense()` at startup.
 - `app/src/main/java/jp/co/kyototech/saqura/sample/MainActivity.kt` — every call
   you need, each surfaced as its own section.
-- `app/build.gradle.kts` — the single `jp.co.kyototech:saqura:1.1.3` dependency.
+- `app/build.gradle.kts` — the single `jp.co.kyototech:saqura:1.2.0` dependency.
 
 ## Cross-platform
 

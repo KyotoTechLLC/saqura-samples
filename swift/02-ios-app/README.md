@@ -29,6 +29,10 @@ Three ways, in order of convenience:
 
 The activated license is cached by SaQura across app launches, so you only need to do this once per device.
 
+## App binding (optional)
+
+A distribution license can be **bound to your app**, so an extracted `.lic` cannot be activated inside a different app. On iOS / macOS the license binds to the app's **bundle identifier**, which `Bundle.main` supplies automatically — so your activation code is unchanged. On a mismatch, activation fails with a clear message and the app stays on the Free tier; it never crashes. To request a bound license, send us your bundle identifier.
+
 ## Project structure
 
 ```

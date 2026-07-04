@@ -12,7 +12,7 @@ android {
         minSdk = 24            // SaQura targets API 24+ (~98% of active devices)
         targetSdk = 34
         versionCode = 1
-        versionName = "1.1.3"  // tracks the SaQura SDK version this sample pins
+        versionName = "1.2.0"  // tracks the SaQura SDK version this sample pins
     }
 
     compileOptions {
@@ -33,7 +33,7 @@ android {
 
 dependencies {
     // The one line that matters — SaQura from Maven Central.
-    implementation("jp.co.kyototech:saqura:1.1.3")
+    implementation("jp.co.kyototech:saqura:1.2.0")
 
     // Standard Android app plumbing used by this sample.
     implementation("androidx.activity:activity-ktx:1.9.2")
