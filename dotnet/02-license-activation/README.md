@@ -27,6 +27,20 @@ Each purchase ships two `.lic` files:
 
 For mobile apps submitted to app stores, prefer the embedded-JSON approach — you don't want the `.lic` file extractable from your app bundle as a standalone asset.
 
+## App binding (optional)
+
+A distribution license can optionally be **bound to your app**, so that an extracted `.lic` cannot be activated inside a different app. Binding is verified offline at activation — **your activation code stays exactly the same**; the library reads the app identity from the operating system itself.
+
+| Platform | Bound to |
+|---|---|
+| Android | package name (`applicationId`) + signing certificate |
+| iOS / Mac Catalyst | bundle identifier |
+| Windows | the host executable's Authenticode signature |
+
+Native device binding uses the .NET 10 MAUI targets (`net10.0-android` / `net10.0-ios` / `net10.0-maccatalyst`). A `net8.0` console/server app uses the base assembly: binding is available on Windows (Authenticode); other desktop OSes have no OS-attested app identity, so a bound license fails closed there — use an unbound license for cross-platform servers. On iOS only the bundle identifier is bound.
+
+On a mismatch, activation fails with a clear message (e.g. *"License is not valid for this application package"*) and the app continues on the Free tier — it never crashes. To request a bound license, contact us with your package name / bundle identifier (and signing certificate on Android/Windows).
+
 ## Where to put the license
 
 Typical locations:
