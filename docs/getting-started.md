@@ -136,7 +136,7 @@ SaQura for Swift is distributed as a **binary xcframework** via `saqura.de` (no 
 
 ```swift
 dependencies: [
-    .package(url: "https://saqura.de/swift/saqura-swift.git", from: "1.0.9")
+    .package(url: "https://saqura.de/swift/saqura-swift.git", from: "1.2.0")
 ]
 ```
 
