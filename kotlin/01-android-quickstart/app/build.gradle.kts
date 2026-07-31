@@ -33,7 +33,7 @@ android {
 
 dependencies {
     // The one line that matters — SaQura from Maven Central.
-    implementation("jp.co.kyototech:saqura:1.2.0")
+    implementation("jp.co.kyototech:saqura:1.2.1")
 
     // Standard Android app plumbing used by this sample.
     implementation("androidx.activity:activity-ktx:1.9.2")

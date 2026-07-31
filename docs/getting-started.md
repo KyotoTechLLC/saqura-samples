@@ -126,7 +126,7 @@ In your module's `build.gradle.kts`:
 repositories { mavenCentral() }
 
 dependencies {
-    implementation("jp.co.kyototech:saqura:1.1.3")
+    implementation("jp.co.kyototech:saqura:1.2.1")
 }
 ```
 

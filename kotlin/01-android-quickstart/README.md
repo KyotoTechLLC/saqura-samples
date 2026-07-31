@@ -10,7 +10,7 @@ you add is one line:
 ```kotlin
 // app/build.gradle.kts
 dependencies {
-    implementation("jp.co.kyototech:saqura:1.2.0")
+    implementation("jp.co.kyototech:saqura:1.2.1")
 }
 ```
 
@@ -48,7 +48,7 @@ variable or a `local.properties` file with `sdk.dir=/path/to/Android/sdk`
 
 ```
 SaQura — Android quickstart
-SDK: jp.co.kyototech:saqura:1.2.0
+SDK: jp.co.kyototech:saqura:1.2.1
 
 --- License ---
 Licensed : false
@@ -117,7 +117,7 @@ activation is rejected fail-closed.)
   wiring `ApiLicense.initialize(context)` + `loadStoredLicense()` at startup.
 - `app/src/main/java/jp/co/kyototech/saqura/sample/MainActivity.kt` — every call
   you need, each surfaced as its own section.
-- `app/build.gradle.kts` — the single `jp.co.kyototech:saqura:1.2.0` dependency.
+- `app/build.gradle.kts` — the single `jp.co.kyototech:saqura:1.2.1` dependency.
 
 ## Cross-platform
 
