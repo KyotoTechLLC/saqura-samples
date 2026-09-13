@@ -13,7 +13,7 @@ Pick one platform — the samples support all four.
 ### Kotlin / Android
 
 - JDK 17
-- Android SDK (compileSdk 34, build-tools 34.0.0) and a device or emulator on API 24+
+- Android SDK (compileSdk 34, build-tools 34.0.0) and a device or emulator on API 26+
 - No Gradle install needed — the sample ships a Gradle wrapper (`./gradlew`)
 
 ### Swift
@@ -126,7 +126,7 @@ In your module's `build.gradle.kts`:
 repositories { mavenCentral() }
 
 dependencies {
-    implementation("jp.co.kyototech:saqura:1.2.1")
+    implementation("jp.co.kyototech:saqura:1.2.2")
 }
 ```
 

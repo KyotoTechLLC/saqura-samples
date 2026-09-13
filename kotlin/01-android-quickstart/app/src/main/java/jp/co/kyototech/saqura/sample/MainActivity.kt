@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
     private suspend fun runDemos() {
         line("SaQura — Android quickstart")
         line("===========================")
-        line("SDK: jp.co.kyototech:saqura:1.2.1")
+        line("SDK: jp.co.kyototech:saqura:1.2.2")
         line()
 
         line("--- License ---")

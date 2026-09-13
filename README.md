@@ -16,7 +16,7 @@ This repository contains runnable sample projects that show you how to add SaQur
 | 02 | [`dotnet/02-license-activation`](dotnet/02-license-activation) | .NET 8+ console | Activating a `.lic` file to unlock paid features |
 | 03 | [`dotnet/03-file-encryption`](dotnet/03-file-encryption) | .NET 8+ console | Encrypt and decrypt files with AES |
 | 04 | [`dotnet/04-bytearray-migration`](dotnet/04-bytearray-migration) | .NET 8+ console | **Upgrading from 1.0.4.4?** Migrate stored `byte[]` AES ciphertext to the v1.0.8 wire format |
-| 05 | [`kotlin/01-android-quickstart`](kotlin/01-android-quickstart) | Android (API 24+) | The 60-second Android integration — AES, RSA, passwords, streaming on a real device |
+| 05 | [`kotlin/01-android-quickstart`](kotlin/01-android-quickstart) | Android (API 26+) | The 60-second Android integration — AES, RSA, passwords, streaming on a real device |
 | 06 | [`swift/01-cli-quickstart`](swift/01-cli-quickstart) | Swift CLI (macOS) | The 30-second Swift integration |
 | 07 | [`swift/02-ios-app`](swift/02-ios-app) | SwiftUI iOS / macOS | Interactive playground for every feature |
 | 08 | [`js/01-node-quickstart`](js/01-node-quickstart) | Node.js 18+ | The 30-second JS/TS integration — Gen8 PQC encryption, ML-DSA signatures, SQS1 streaming |

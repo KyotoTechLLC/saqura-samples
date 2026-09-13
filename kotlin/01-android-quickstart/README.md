@@ -10,7 +10,7 @@ you add is one line:
 ```kotlin
 // app/build.gradle.kts
 dependencies {
-    implementation("jp.co.kyototech:saqura:1.2.1")
+    implementation("jp.co.kyototech:saqura:1.2.2")
 }
 ```
 
@@ -36,7 +36,7 @@ adb logcat -s SaQuraSample:I
 |---|---|
 | JDK | 17 |
 | Android SDK | compileSdk 34, build-tools 34.0.0 |
-| Min device | Android 7.0 (API 24) or newer |
+| Min device | Android 8.0 (API 26) or newer |
 | Gradle | provided by the wrapper (`./gradlew`) — no system Gradle needed |
 
 The Gradle wrapper pins the exact Gradle version; you do not need Gradle
@@ -48,7 +48,7 @@ variable or a `local.properties` file with `sdk.dir=/path/to/Android/sdk`
 
 ```
 SaQura — Android quickstart
-SDK: jp.co.kyototech:saqura:1.2.1
+SDK: jp.co.kyototech:saqura:1.2.2
 
 --- License ---
 Licensed : false
@@ -117,7 +117,7 @@ activation is rejected fail-closed.)
   wiring `ApiLicense.initialize(context)` + `loadStoredLicense()` at startup.
 - `app/src/main/java/jp/co/kyototech/saqura/sample/MainActivity.kt` — every call
   you need, each surfaced as its own section.
-- `app/build.gradle.kts` — the single `jp.co.kyototech:saqura:1.2.1` dependency.
+- `app/build.gradle.kts` — the single `jp.co.kyototech:saqura:1.2.2` dependency.
 
 ## Cross-platform
 

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "jp.co.kyototech.saqura.sample"
-        minSdk = 24            // SaQura targets API 24+ (~98% of active devices)
+        minSdk = 26            // SaQura 1.2.2+ declares minSdk 26 (Android 8.0)
         targetSdk = 34
         versionCode = 1
         versionName = "1.2.0"  // tracks the SaQura SDK version this sample pins
@@ -33,7 +33,7 @@ android {
 
 dependencies {
     // The one line that matters — SaQura from Maven Central.
-    implementation("jp.co.kyototech:saqura:1.2.1")
+    implementation("jp.co.kyototech:saqura:1.2.2")
 
     // Standard Android app plumbing used by this sample.
     implementation("androidx.activity:activity-ktx:1.9.2")
